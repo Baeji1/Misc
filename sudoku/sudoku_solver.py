@@ -10,8 +10,7 @@ class Sudoku:
             self.grid = self._input()
         else:
             print(" No source file provided. Init to zero by default. ")
-            # self.grid = np.zeros((n,n), dtype=np.uint8) #real
-            self.grid = np.uint8(np.random.rand(self.n, self.n) * 10)
+            self.grid = np.zeros((self.n, self.n), dtype=np.uint8)
 
         self.syncgrid()
 
