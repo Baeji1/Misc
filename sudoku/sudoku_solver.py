@@ -12,14 +12,13 @@ class Sudoku:
             print(" No source file provided. Init to zero by default. ")
             self.grid = np.zeros((self.n, self.n), dtype=np.uint8)
 
-        self.syncgrid()
+        self._syncgrid()
 
-    def syncgrid(self):
+    def _syncgrid(self):
         self.rows = np.array([x for x in self.grid])
         self.columns = self.grid.T
 
     def _input(self):
-
         if self.filename:
             with open(self.filename) as file:
                 data = file.readlines()
@@ -39,6 +38,7 @@ class Sudoku:
         print(" Shape: ", self.grid.shape)
 
 
-a = Sudoku(sourcefile="c:/Users/rajatshr/Desktop/Code/Misc/sudoku/sudoku_input.txt")
-a.display()
+if __name__ == "__main__":
+    a = Sudoku(sourcefile="c:/Users/rajatshr/Desktop/Code/Misc/sudoku/sudoku_input.txt")
+    a.display()
 
