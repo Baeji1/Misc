@@ -27,7 +27,7 @@ class Sudoku:
         self.rows = np.array([x for x in self.grid])
         self.columns = self.grid.T
 
-    def available_numbers(self, x, y):
+    def single_availability(self, x, y):
         if self.grid[x][y] != 0:
             return set({})
 
@@ -74,6 +74,6 @@ if __name__ == "__main__":
     a.display()
     for r in range(6, 9):
         for c in range(3, 6):
-            print(a.available_numbers(r, c), end=" ")
+            print(a.single_availability(r, c), end=" ")
         print()
 
