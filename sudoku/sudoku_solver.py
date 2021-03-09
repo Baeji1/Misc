@@ -27,6 +27,11 @@ class Sudoku:
         self.rows = np.array([x for x in self.grid])
         self.columns = self.grid.T
 
+    def get_cell_number(self, x, y):
+        x = x // self.rank
+        y = y // self.rank
+        return x * 3 + y
+
     def _input(self):
         if self.filename:
             with open(self.filename) as file:
@@ -50,4 +55,9 @@ class Sudoku:
 if __name__ == "__main__":
     a = Sudoku(sourcefile="c:/Users/rajatshr/Desktop/Code/Misc/sudoku/sudoku_input.txt")
     a.display()
+    print()
+    for r in range(a.n):
+        for c in range(a.n):
+            print(a.cell[a.get_cell_number(r, c)], end=" ")
+        print()
 
