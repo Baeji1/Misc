@@ -68,10 +68,26 @@ class Sudoku:
         print(self.grid)
         print(" Shape: ", self.grid.shape)
 
+    def pretty(self, full=1):
+        print("\n Grid:\n")
+        print("-------------------------")
+        for r in range(self.n):
+            print("|", end=" ")
+            for c in range(self.n):
+                if self.grid[r][c] != 0 or full == 1:
+                    print(self.grid[r][c], end=" ")
+                else:
+                    print(" ", end=" ")
+                if (c + 1) % 3 == 0:
+                    print("|", end=" ")
+            print()
+            if (r + 1) % 3 == 0:
+                print("-------------------------")
+
 
 if __name__ == "__main__":
     a = Sudoku(sourcefile="c:/Users/rajatshr/Desktop/Code/Misc/sudoku/sudoku_input.txt")
-    a.display()
+    a.pretty(0)
     for r in range(6, 9):
         for c in range(3, 6):
             print(a.single_availability(r, c), end=" ")
