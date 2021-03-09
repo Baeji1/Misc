@@ -27,6 +27,23 @@ class Sudoku:
         self.rows = np.array([x for x in self.grid])
         self.columns = self.grid.T
 
+    def available_numbers(self, x, y):
+        if self.grid[x][y] != 0:
+            return set({})
+
+        fullset = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+        rowset = set(self.rows[x])
+        columnset = set(self.columns[y])
+        cell_range = self.cell[self.get_cell_number(x, y)]
+        cellset = []
+
+        for r in range(cell_range[0][0], cell_range[1][0] + 1):
+            for c in range(cell_range[0][1], cell_range[1][1] + 1):
+                cellset.append(self.grid[r][c])
+        cellset = set(cellset)
+        result = fullset.difference(rowset.union(columnset.union(cellset)))
+        return result
+
     def get_cell_number(self, x, y):
         x = x // self.rank
         y = y // self.rank
@@ -55,9 +72,8 @@ class Sudoku:
 if __name__ == "__main__":
     a = Sudoku(sourcefile="c:/Users/rajatshr/Desktop/Code/Misc/sudoku/sudoku_input.txt")
     a.display()
-    print()
-    for r in range(a.n):
-        for c in range(a.n):
-            print(a.cell[a.get_cell_number(r, c)], end=" ")
+    for r in range(6, 9):
+        for c in range(3, 6):
+            print(a.available_numbers(r, c), end=" ")
         print()
 
