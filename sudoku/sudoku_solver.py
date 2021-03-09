@@ -6,6 +6,15 @@ class Sudoku:
         self.rank = rank
         self.filename = sourcefile
         self.n = self.rank ** 2
+        self.cell = {}
+        x, y = 0, 0
+        for i in range(self.n):
+            self.cell[i] = [(x, y), (x + self.rank - 1, y + self.rank - 1)]
+            y += self.rank
+            if y == self.n:
+                y = 0
+                x += self.rank
+
         if self.filename:
             self.grid = self._input()
         else:
