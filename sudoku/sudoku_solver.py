@@ -70,6 +70,25 @@ class Sudoku:
         result = fullset.difference(rowset.union(columnset.union(cellset)))
         return result
 
+    def validate(self):
+        self._syncgrid()
+
+        for i in range(self.n):
+            r = self.rows[i]
+            c = self.columns[i]
+            if len(r) != len(set(r)) or len(c) != len(set(c)):
+                return False
+
+    def get_number_block(self, x):
+        # get all non zero numbers in a block x(1-8)
+        coord = self.cell[x]
+        l = []
+        for i in range(coord[0][0], coord[1][0] + 1):
+            for j in range(coord[0][1], coord[1][1] + 1):
+                if self.grid[i][j] != 0:
+                    l.append(self.grid[i][j])
+        return l
+
     def get_cell_number(self, x, y):
         # get cell number of any position x,y
         x = x // self.rank
@@ -108,8 +127,5 @@ class Sudoku:
 if __name__ == "__main__":
     a = Sudoku(sourcefile="c:/Users/rajatshr/Desktop/Code/Misc/sudoku/sudoku_input.txt")
     a.pretty(0)
-    for r in range(3, 6):
-        for c in range(3, 6):
-            print(a.position_available_set(r, c), end=" ")
-        print()
+    print(a.get_number_block(4))
 
