@@ -48,7 +48,28 @@ class Sudoku:
             print(" Invalid syntax for input(). Enter source filename \n")
         return 0
 
-    def position_available_set(self, x, y):
+    def validate(self):
+        self._syncgrid()
+
+        for i in range(self.n):
+            for j in range(self.n):
+                if (
+                    self.grid[i][j] == 0
+                    and len(self.get_position_available_set(i, j)) == 0
+                ):
+                    return False
+
+        for i in range(self.n):
+            r = self.rows[i]
+            c = self.columns[i]
+            if sum(r) != sum(set(r)) or sum(c) != sum(set(c)):
+                return False
+            b = self.get_number_block(i)
+            if sum(b) != sum(set(b)):
+                return False
+        return True
+
+    def get_position_available_set(self, x, y):
         # return a set of all possible values for a position x,y
         if self.grid[x][y] != 0:
             return set({})
@@ -69,15 +90,6 @@ class Sudoku:
         # fullset minus union of all existion numbers in row, column, cell block
         result = fullset.difference(rowset.union(columnset.union(cellset)))
         return result
-
-    def validate(self):
-        self._syncgrid()
-
-        for i in range(self.n):
-            r = self.rows[i]
-            c = self.columns[i]
-            if len(r) != len(set(r)) or len(c) != len(set(c)):
-                return False
 
     def get_number_block(self, x):
         # get all non zero numbers in a block x(1-8)
@@ -127,5 +139,5 @@ class Sudoku:
 if __name__ == "__main__":
     a = Sudoku(sourcefile="c:/Users/rajatshr/Desktop/Code/Misc/sudoku/sudoku_input.txt")
     a.pretty(0)
-    print(a.get_number_block(4))
+    print(a.validate())
 
