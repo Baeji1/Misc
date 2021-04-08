@@ -23,6 +23,7 @@ class Sudoku:
         if self.filename:
             self.grid = self._input()
         else:
+            logging.warning("No source file provided to init")
             print(" No source file provided. Init to zero by default. ")
             self.grid = np.zeros((self.n, self.n), dtype=np.uint8)
 
@@ -33,6 +34,7 @@ class Sudoku:
         # get rows and columns as variables from grid
         self.rows = np.array([x for x in self.grid])
         self.columns = self.grid.T
+        logging.debug("SYNCGRID")
 
     def _input(self):
         # takes raw input into grid from a source file specified during init
@@ -46,6 +48,7 @@ class Sudoku:
                     r.append(list(line.split()[0]))
                 return np.array(r, dtype=np.uint8)
         else:
+            logging.error("No source file provided to _input()")
             print(" Invalid syntax for input(). Enter source filename \n")
         return 0
 
@@ -58,16 +61,23 @@ class Sudoku:
                     self.grid[i][j] == 0
                     and len(self.get_position_available_set(i, j)) == 0
                 ):
+                    logging.info(f"No numbers available at position {i},{j}")
                     return False
 
         for i in range(self.n):
             r = self.rows[i]
             c = self.columns[i]
-            if sum(r) != sum(set(r)) or sum(c) != sum(set(c)):
+            if sum(r) != sum(set(r)):
+                logging.info(f"Row duplicate: {i}")
+                return False
+            if sum(c) != sum(set(c)):
+                logging.info(f"Column duplicate: {i}")
                 return False
             b = self.get_number_block(i)
             if sum(b) != sum(set(b)):
+                logging.info(f"Block duplicate: {i}")
                 return False
+        logging.info("validation: ok")
         return True
 
     def get_position_available_set(self, x, y):
@@ -141,14 +151,12 @@ if __name__ == "__main__":
     logging.basicConfig(
         filename="app.log",
         filemode="w",
-        format="%(asctime)s - %(message)s",
+        format=" %(asctime)s - %(levelname)s - %(message)s",
         datefmt="%d-%b-%y %H:%M:%S",
         level=logging.INFO,
     )
-    logging.info("Start")
+    logging.info("start")
 
     a = Sudoku(sourcefile="c:/Users/rajatshr/Desktop/Code/Misc/sudoku/sudoku_input.txt")
     a.pretty(0)
-    print(a.validate())
-    logging.error("hello")
-
+    a.validate()
