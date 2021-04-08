@@ -1,4 +1,5 @@
 import numpy as np
+import logging
 
 
 class Sudoku:
@@ -137,7 +138,17 @@ class Sudoku:
 
 
 if __name__ == "__main__":
+    logging.basicConfig(
+        filename="app.log",
+        filemode="w",
+        format="%(asctime)s - %(message)s",
+        datefmt="%d-%b-%y %H:%M:%S",
+        level=logging.INFO,
+    )
+    logging.info("Start")
+
     a = Sudoku(sourcefile="c:/Users/rajatshr/Desktop/Code/Misc/sudoku/sudoku_input.txt")
     a.pretty(0)
     print(a.validate())
+    logging.error("hello")
 
