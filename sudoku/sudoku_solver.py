@@ -149,7 +149,7 @@ class Sudoku:
 
 if __name__ == "__main__":
     logging.basicConfig(
-        filename="app.log",
+        filename="C:/Users/rajatshr/Desktop/Code/Misc/sudoku/app.log",
         filemode="w",
         format=" %(asctime)s - %(levelname)s - %(message)s",
         datefmt="%d-%b-%y %H:%M:%S",
