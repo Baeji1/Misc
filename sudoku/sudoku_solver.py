@@ -80,7 +80,35 @@ class Sudoku:
         logging.info("validation: ok")
         return True
 
+    def solve_backtrack(self, x, y):
+        """
+        values = get_position_available_set() # this has all the possible values for x,y
+        # values should update with the grid
+
+        if values = non zero:
+            for val in values
+                put val in x,y
+                v = validate
+                if v = true:
+                    if x,y = last:
+                        success
+                    else:
+                        solve backtrack(next)
+            
+        else:
+            v = validate
+            if v = true:
+                if x,y = last:
+                    success
+                else:
+                    solve backtrack(next)           
+        
+        """
+
     def get_position_available_set(self, x, y):
+        # sync to latest value
+        self._syncgrid()
+
         # return a set of all possible values for a position x,y
         if self.grid[x][y] != 0:
             return set({})
