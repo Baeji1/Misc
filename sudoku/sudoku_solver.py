@@ -249,17 +249,14 @@ class Sudoku:
             if (r + 1) % self.rank == 0:
                 print("-------------" * (self.rank - 1))
 
-
-def numberToBase(n, b):
-    if n == 0:
-        return [0, 0]
-    digits = []
-    while n:
-        digits.append(int(n % b))
-        n //= b
-    if len(digits) == 1:
-        digits.append(0)
-    return digits[::-1]
+    def to_file(self, path):
+        print(path)
+        with open(path, "w") as fp:
+            for i in range(self.n):
+                for j in range(self.n):
+                    fp.write(str(self.grid[i][j]))
+                fp.write("\n")
+            fp.write("\n\n\n")
 
 
 if __name__ == "__main__":
@@ -274,7 +271,7 @@ if __name__ == "__main__":
 
     path = "c:/Users/rajatshr/Desktop/Code/Misc/sudoku/puzzles/"
 
-    f = "beginner"
+    f = "easy"
     sourcefile = os.path.join(path, f + ".txt")
     sourcefile_sol = os.path.join(path, f + "_sol.txt")
 
@@ -287,6 +284,8 @@ if __name__ == "__main__":
     a.pretty(raw=1)
     print(a)
     if Sudoku.compare(a, b):
-        print(f" Solved and verified in {end-start:0.2f} seconds.")
+        print(f" Solved and verified: {end-start:0.2f}s")
+    else:
+        print(f" unverified: {end-start:0.2f}s")
     logging.critical("end")
 

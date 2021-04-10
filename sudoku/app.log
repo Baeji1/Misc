@@ -1,10 +1,11 @@
- 10-Apr-21 20:01:06 - CRITICAL - start
- 10-Apr-21 20:01:06 - INFO - creating sudoku
- 10-Apr-21 20:01:06 - INFO -  using file: c:/Users/rajatshr/Desktop/Code/Misc/sudoku/puzzles/beginner.txt
- 10-Apr-21 20:01:06 - INFO - creating sudoku
- 10-Apr-21 20:01:06 - INFO -  using file: c:/Users/rajatshr/Desktop/Code/Misc/sudoku/puzzles/beginner_sol.txt
- 10-Apr-21 20:01:06 - INFO - No numbers available at position 6,5
- 10-Apr-21 20:01:06 - INFO - creating sudoku
- 10-Apr-21 20:01:06 - WARNING - No source file provided to init
- 10-Apr-21 20:01:06 - INFO -  objects are equal
- 10-Apr-21 20:01:06 - CRITICAL - end
+ 10-Apr-21 20:28:30 - CRITICAL - start
+ 10-Apr-21 20:28:30 - INFO - creating sudoku
+ 10-Apr-21 20:28:30 - INFO -  using file: c:/Users/rajatshr/Desktop/Code/Misc/sudoku/puzzles/easy.txt
+ 10-Apr-21 20:28:30 - INFO - creating sudoku
+ 10-Apr-21 20:28:30 - INFO -  using file: c:/Users/rajatshr/Desktop/Code/Misc/sudoku/puzzles/easy_sol.txt
+ 10-Apr-21 20:28:30 - INFO - No numbers available at position 4,4
+ 10-Apr-21 20:28:30 - INFO - No numbers available at position 6,8
+ 10-Apr-21 20:28:30 - INFO - creating sudoku
+ 10-Apr-21 20:28:30 - WARNING - No source file provided to init
+ 10-Apr-21 20:28:30 - INFO -  objects are equal
+ 10-Apr-21 20:28:30 - CRITICAL - end
