@@ -1,5 +1,6 @@
 import numpy as np
 import os
+import time
 import logging
 
 
@@ -141,7 +142,7 @@ class Sudoku:
                 return g
         
         """
-        print(f" pos: {x} {y}")
+        logging.debug(f" pos: {x} {y}")
         values = self.get_position_available_set(x, y)
         next_y = y + 1
         if next_y == 9:
@@ -279,9 +280,13 @@ if __name__ == "__main__":
 
     a = Sudoku(sourcefile=sourcefile)
     b = Sudoku(sourcefile=sourcefile_sol)
+
+    start = time.time()
     a.solve_backtrack()
+    end = time.time()
     a.pretty(raw=1)
     print(a)
-    print(Sudoku.compare(a, b))
+    if Sudoku.compare(a, b):
+        print(f" Solved and verified in {end-start:0.2f} seconds.")
     logging.critical("end")
 
