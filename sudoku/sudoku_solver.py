@@ -271,8 +271,11 @@ class Sudoku:
 
 
 if __name__ == "__main__":
+
+    path = os.getcwd()
+
     logging.basicConfig(
-        filename="C:/Users/rajatshr/Desktop/Code/Misc/sudoku/app.log",
+        filename=os.path.join(path, "sudoku/app.log"),
         filemode="w",
         format=" %(asctime)s - %(levelname)s - %(message)s",
         datefmt="%d-%b-%y %H:%M:%S",
@@ -280,9 +283,9 @@ if __name__ == "__main__":
     )
     logging.critical("start")
 
-    path = "c:/Users/rajatshr/Desktop/Code/Misc/sudoku/puzzles/"
+    path = os.path.join(os.getcwd(), "sudoku/puzzles/")
 
-    f = "medium"
+    f = "extreme"
     sourcefile = os.path.join(path, f + ".txt")
     sourcefile_sol = os.path.join(path, f + "_sol.txt")
 
