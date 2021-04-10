@@ -2,6 +2,7 @@ import numpy as np
 import os
 import time
 import logging
+import progressbar
 
 
 class Sudoku:
@@ -11,6 +12,8 @@ class Sudoku:
         self.rank = rank
         self.filename = sourcefile
         self.n = self.rank ** 2
+        self.counter = -1  # for tracking solve
+        self.bar = progressbar.ProgressBar(max_value=88)
         self.cell = {}  # contains cell number: coordinate range of cell
         x, y = 0, 0
 
@@ -144,6 +147,12 @@ class Sudoku:
         """
         logging.debug(f" pos: {x} {y}")
         values = self.get_position_available_set(x, y)
+
+        if int(str(x) + str(y)) > self.counter:
+            # print(int(str(x) + str(y)))
+            self.bar.update(int(str(x) + str(y)))
+            self.counter = int(str(x) + str(y))
+
         next_y = y + 1
         if next_y == 9:
             next_y = 0
@@ -157,6 +166,7 @@ class Sudoku:
                 v = self.validate()
                 if v == True:
                     if x == 8 and y == 8:
+                        self.counter = -1
                         return "Success"
                     else:
                         result = self.solve_backtrack(next_x, next_y)
@@ -168,6 +178,7 @@ class Sudoku:
             return "Failure"
         else:
             if x == 8 and y == 8:
+                self.counter = -1
                 return "Success"
             else:
                 result = self.solve_backtrack(next_x, next_y)
@@ -271,7 +282,7 @@ if __name__ == "__main__":
 
     path = "c:/Users/rajatshr/Desktop/Code/Misc/sudoku/puzzles/"
 
-    f = "extreme"
+    f = "medium"
     sourcefile = os.path.join(path, f + ".txt")
     sourcefile_sol = os.path.join(path, f + "_sol.txt")
 
@@ -281,6 +292,7 @@ if __name__ == "__main__":
     start = time.time()
     a.solve_backtrack()
     end = time.time()
+    time.sleep(0.1)
     a.pretty(raw=1)
     print(a)
     if Sudoku.compare(a, b):
