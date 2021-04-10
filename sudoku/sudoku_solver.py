@@ -110,10 +110,14 @@ class Sudoku:
                 return g
         
         """
-
+        print(f" pos: {x} {y}")
         values = self.get_position_available_set(x, y)
-        next_x = (x + 1) % 9
-        next_y = (y + 1) % 9
+        next_y = y + 1
+        if next_y == 9:
+            next_y = 0
+            next_x = x + 1
+        else:
+            next_x = x
 
         if len(values) > 0:
             for val in values:
@@ -207,6 +211,18 @@ class Sudoku:
                 print("-------------------------")
 
 
+def numberToBase(n, b):
+    if n == 0:
+        return [0, 0]
+    digits = []
+    while n:
+        digits.append(int(n % b))
+        n //= b
+    if len(digits) == 1:
+        digits.append(0)
+    return digits[::-1]
+
+
 if __name__ == "__main__":
     logging.basicConfig(
         filename="C:/Users/rajatshr/Desktop/Code/Misc/sudoku/app.log",
@@ -218,5 +234,6 @@ if __name__ == "__main__":
     logging.info("start")
 
     a = Sudoku(sourcefile="c:/Users/rajatshr/Desktop/Code/Misc/sudoku/sudoku_input.txt")
-    a.pretty(0)
-    a.validate()
+    # a.solve_backtrack(0, 0)
+    # a.pretty(0)
+
