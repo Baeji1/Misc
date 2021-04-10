@@ -26,11 +26,14 @@ class Sudoku:
             self.grid = self._input()
         else:
             logging.warning("No source file provided to init")
-            print(" No source file provided. Init to zero by default. ")
             self.grid = np.zeros((self.n, self.n), dtype=np.uint8)
 
         # sync row and column variables
         self._syncgrid()
+
+    def __repr__(self):
+        self.pretty(0)
+        return "\n"
 
     def _syncgrid(self):
         # get rows and columns as variables from grid
@@ -53,6 +56,28 @@ class Sudoku:
             logging.error("No source file provided to _input()")
             print(" Invalid syntax for input(). Enter source filename \n")
         return 0
+
+    @staticmethod
+    def compare(a, b):
+        x = Sudoku()
+        if type(a) != type(x) or type(b) != type(x):
+            logging.error(f" invalid objects sent to compare: {type(a)} : {type(b)}")
+            return False
+
+        if a.n != b.n:
+            logging.error(f" objects of unequal dimensions: {a.n} : {b.n}")
+            return False
+
+        n = a.n
+
+        for i in range(n):
+            for j in range(n):
+                if a.grid[i][j] != b.grid[i][j]:
+                    logging.info(f" unequal value at {i},{j}")
+                    return False
+
+        logging.info(" objects are equal")
+        return True
 
     def validate(self):
         self._syncgrid()
@@ -238,5 +263,8 @@ if __name__ == "__main__":
     a = Sudoku(sourcefile="c:/Users/rajatshr/Desktop/Code/Misc/sudoku/sudoku_input.txt")
     b = Sudoku(sourcefile="c:/Users/rajatshr/Desktop/Code/Misc/sudoku/sudoku_sol.txt")
     a.solve_backtrack()
-    a.pretty(0)
+    print(a)
+    print(Sudoku.compare(a, b))
+
+    logging.critical('end')
 
