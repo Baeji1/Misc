@@ -31,6 +31,9 @@ class Sudoku:
         # sync row and column variables
         self._syncgrid()
 
+        # have raw grid for reference
+        self.raw_grid = self.grid.copy()
+
     def __repr__(self):
         self.pretty(0)
         return "\n"
@@ -219,16 +222,23 @@ class Sudoku:
         print(self.grid)
         print(" Shape: ", self.grid.shape)
 
-    def pretty(self, full=1):
+    def pretty(self, full=0, raw=0):
         # prints grid in conventional form
-        # full = 0 for minimal and full = 1 (default) for complete grid
+        # full = 0 (default) for minimal and full = 1 for complete grid
+        # raw = 0 for current state and raw = 1 for initial state
+
+        if raw == 0:
+            x = self.grid
+        else:
+            x = self.raw_grid
+
         print("\n Grid:\n")
         print("-------------" * (self.rank - 1))
         for r in range(self.n):
             print("|", end=" ")
             for c in range(self.n):
-                if self.grid[r][c] != 0 or full == 1:
-                    print(self.grid[r][c], end=" ")
+                if x[r][c] != 0 or full == 1:
+                    print(x[r][c], end=" ")
                 else:
                     print(" ", end=" ")
                 if (c + 1) % self.rank == 0:
@@ -261,14 +271,12 @@ if __name__ == "__main__":
     logging.critical("start")
 
     a = Sudoku(sourcefile="c:/Users/rajatshr/Desktop/Code/Misc/sudoku/sudoku_input.txt")
-    b = Sudoku(
-        rank=2, sourcefile="c:/Users/rajatshr/Desktop/Code/Misc/sudoku/sudoku_sol.txt"
-    )
+    b = Sudoku(sourcefile="c:/Users/rajatshr/Desktop/Code/Misc/sudoku/sudoku_sol.txt")
     a.solve_backtrack()
     print(a)
     print(b)
-    print(a.n, b.n)
     print(Sudoku.compare(a, b))
+    a.pretty(raw=1)
 
     logging.critical("end")
 
