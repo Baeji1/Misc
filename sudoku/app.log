@@ -1,1 +1,28 @@
- 10-Apr-21 18:06:59 - INFO - start
+ 10-Apr-21 18:28:53 - CRITICAL - start
+ 10-Apr-21 18:28:53 - INFO - creating sudoku
+ 10-Apr-21 18:28:53 - INFO -  using file: c:/Users/rajatshr/Desktop/Code/Misc/sudoku/sudoku_input.txt
+ 10-Apr-21 18:28:53 - INFO - validation: ok
+ 10-Apr-21 18:28:53 - INFO - validation: ok
+ 10-Apr-21 18:28:53 - INFO - validation: ok
+ 10-Apr-21 18:28:53 - INFO - validation: ok
+ 10-Apr-21 18:28:53 - INFO - validation: ok
+ 10-Apr-21 18:28:53 - INFO - validation: ok
+ 10-Apr-21 18:28:53 - INFO - validation: ok
+ 10-Apr-21 18:28:53 - INFO - validation: ok
+ 10-Apr-21 18:28:53 - INFO - validation: ok
+ 10-Apr-21 18:28:53 - INFO - validation: ok
+ 10-Apr-21 18:28:53 - INFO - validation: ok
+ 10-Apr-21 18:28:53 - INFO - validation: ok
+ 10-Apr-21 18:28:53 - INFO - validation: ok
+ 10-Apr-21 18:28:53 - INFO - validation: ok
+ 10-Apr-21 18:28:53 - INFO - validation: ok
+ 10-Apr-21 18:28:53 - INFO - validation: ok
+ 10-Apr-21 18:28:53 - INFO - validation: ok
+ 10-Apr-21 18:28:53 - INFO - validation: ok
+ 10-Apr-21 18:28:53 - INFO - No numbers available at position 6,5
+ 10-Apr-21 18:28:53 - INFO - validation: ok
+ 10-Apr-21 18:28:53 - INFO - validation: ok
+ 10-Apr-21 18:28:53 - INFO - validation: ok
+ 10-Apr-21 18:28:53 - INFO - validation: ok
+ 10-Apr-21 18:28:53 - INFO - validation: ok
+ 10-Apr-21 18:28:53 - INFO - validation: ok

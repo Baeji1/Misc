@@ -5,6 +5,7 @@ import logging
 class Sudoku:
     def __init__(self, rank=3, sourcefile=False):
         # initial call to create sudoku object
+        logging.info("creating sudoku")
         self.rank = rank
         self.filename = sourcefile
         self.n = self.rank ** 2
@@ -21,6 +22,7 @@ class Sudoku:
 
         # source for grid values
         if self.filename:
+            logging.info(f" using file: {self.filename}")
             self.grid = self._input()
         else:
             logging.warning("No source file provided to init")
@@ -80,7 +82,7 @@ class Sudoku:
         logging.info("validation: ok")
         return True
 
-    def solve_backtrack(self, x, y):
+    def solve_backtrack(self, x=0, y=0):
         """
         values = get_position_available_set() # this has all the possible values for x,y
         # values should update with the grid
@@ -231,9 +233,10 @@ if __name__ == "__main__":
         datefmt="%d-%b-%y %H:%M:%S",
         level=logging.INFO,
     )
-    logging.info("start")
+    logging.critical("start")
 
     a = Sudoku(sourcefile="c:/Users/rajatshr/Desktop/Code/Misc/sudoku/sudoku_input.txt")
-    # a.solve_backtrack(0, 0)
-    # a.pretty(0)
+    b = Sudoku(sourcefile="c:/Users/rajatshr/Desktop/Code/Misc/sudoku/sudoku_sol.txt")
+    a.solve_backtrack()
+    a.pretty(0)
 
