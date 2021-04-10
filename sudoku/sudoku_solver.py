@@ -164,35 +164,44 @@ class Sudoku:
                 return g
         
         """
+        # refactored for sonarlint
         logging.debug(f" pos: {x} {y}")
+
+        # get the possible values for coords
         values = self.get_position_available_set(x, y)
 
+        # update the progress bar
         self._update_bar(x, y)
 
+        # get next coordinate
         next_x, next_y = self._get_next(x, y)
 
-        if len(values) == 0:
-            if x + y == 16:
+        if len(values) == 0:  # existing number in cell
+            if x + y == 16:  # final cell
                 self.counter = -1
                 logging.warning(" solve: success")
                 return "Success"
             else:
-                result = self.solve_backtrack(next_x, next_y)
+                result = self.solve_backtrack(
+                    next_x, next_y
+                )  # call solve on next coord
                 return result
 
-        for val in values:
+        for val in values:  # if empty cell then go through possibilities
             self.grid[x][y] = val
-            v = self.validate()
+            v = self.validate()  # verify new grid
             if v == True:
-                if x + y == 16:
+                if x + y == 16:  # final cell
                     self.counter = -1
                     logging.warning(" solve: success")
                     return "Success"
                 else:
-                    result = self.solve_backtrack(next_x, next_y)
+                    result = self.solve_backtrack(
+                        next_x, next_y
+                    )  # call solve on next coord
                     if result == "Success":
                         return result
-        self.grid[x][y] = 0
+        self.grid[x][y] = 0  # reset to empty if all values failed
         return "Failure"
 
     def get_position_available_set(self, x, y):
