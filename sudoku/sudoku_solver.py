@@ -271,7 +271,7 @@ if __name__ == "__main__":
 
     path = "c:/Users/rajatshr/Desktop/Code/Misc/sudoku/puzzles/"
 
-    f = "hard"
+    f = "extreme"
     sourcefile = os.path.join(path, f + ".txt")
     sourcefile_sol = os.path.join(path, f + "_sol.txt")
 
