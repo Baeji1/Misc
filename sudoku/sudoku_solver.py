@@ -115,6 +115,25 @@ class Sudoku:
         logging.debug("validation: ok")
         return True
 
+    def _update_bar(self, x, y):
+        # update progress bar of the object
+
+        if int(str(x) + str(y)) > self.counter:
+            self.bar.update(int(str(x) + str(y)))
+            self.counter = int(str(x) + str(y))
+
+    def _get_next(self, x, y):
+        # generate next grid coordinate
+
+        next_y = y + 1
+        if next_y == self.n:
+            next_y = 0
+            next_x = x + 1
+        else:
+            next_x = x
+
+        return next_x, next_y
+
     def solve_backtrack(self, x=0, y=0):
         """
         values = get_position_available_set() # this has all the possible values for x,y
@@ -148,42 +167,33 @@ class Sudoku:
         logging.debug(f" pos: {x} {y}")
         values = self.get_position_available_set(x, y)
 
-        if int(str(x) + str(y)) > self.counter:
-            self.bar.update(int(str(x) + str(y)))
-            self.counter = int(str(x) + str(y))
+        self._update_bar(x, y)
 
-        next_y = y + 1
-        if next_y == 9:
-            next_y = 0
-            next_x = x + 1
-        else:
-            next_x = x
+        next_x, next_y = self._get_next(x, y)
 
-        if len(values) > 0:
-            for val in values:
-                self.grid[x][y] = val
-                v = self.validate()
-                if v == True:
-                    if x == 8 and y == 8:
-                        self.counter = -1
-                        logging.warning(" solve: success")
-                        return "Success"
-                    else:
-                        result = self.solve_backtrack(next_x, next_y)
-                        if result == "Success":
-                            return result
-                else:
-                    continue
-            self.grid[x][y] = 0
-            return "Failure"
-        else:
-            if x == 8 and y == 8:
+        if len(values) == 0:
+            if x + y == 16:
                 self.counter = -1
                 logging.warning(" solve: success")
                 return "Success"
             else:
                 result = self.solve_backtrack(next_x, next_y)
                 return result
+
+        for val in values:
+            self.grid[x][y] = val
+            v = self.validate()
+            if v == True:
+                if x + y == 16:
+                    self.counter = -1
+                    logging.warning(" solve: success")
+                    return "Success"
+                else:
+                    result = self.solve_backtrack(next_x, next_y)
+                    if result == "Success":
+                        return result
+        self.grid[x][y] = 0
+        return "Failure"
 
     def get_position_available_set(self, x, y):
         # sync to latest value
@@ -286,22 +296,24 @@ if __name__ == "__main__":
 
     path = os.path.join(os.getcwd(), "sudoku/puzzles/")
 
-    f = "custom"
-    sourcefile = os.path.join(path, f + ".txt")
-    sourcefile_sol = os.path.join(path, f + "_sol.txt")
+    files = ["beginner", "easy", "medium", "hard", "extreme", "custom"]
 
-    a = Sudoku(sourcefile=sourcefile)
-    b = Sudoku(sourcefile=sourcefile_sol)
+    for f in files:
+        sourcefile = os.path.join(path, f + ".txt")
+        sourcefile_sol = os.path.join(path, f + "_sol.txt")
 
-    start = time.time()
-    a.solve_backtrack()
-    end = time.time()
-    a.to_file(sourcefile_sol)
-    a.pretty(raw=1)
-    print(a)
-    if Sudoku.compare(a, b):
-        print(f" Solved and verified: {end-start:0.2f}s")
-    else:
-        print(f" unverified: {end-start:0.2f}s")
+        a = Sudoku(sourcefile=sourcefile)
+        b = Sudoku(sourcefile=sourcefile_sol)
+
+        start = time.time()
+        a.solve_backtrack()
+        end = time.time()
+        # a.pretty(raw=1)
+        # print(a)
+        if Sudoku.compare(a, b):
+            print(f" solved and verified: {end-start:0.2f}s")
+        else:
+            print(f" unverified: {end-start:0.2f}s")
+
     logging.critical("end")
 
