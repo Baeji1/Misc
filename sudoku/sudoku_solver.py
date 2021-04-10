@@ -166,6 +166,7 @@ class Sudoku:
         """
         # refactored for sonarlint
         logging.debug(f" pos: {x} {y}")
+        solved = " success: solved"
 
         # get the possible values for coords
         values = self.get_position_available_set(x, y)
@@ -179,7 +180,7 @@ class Sudoku:
         if len(values) == 0:  # existing number in cell
             if x + y == 16:  # final cell
                 self.counter = -1
-                logging.warning(" solve: success")
+                logging.warning(solved)
                 return "Success"
             else:
                 result = self.solve_backtrack(
@@ -193,7 +194,7 @@ class Sudoku:
             if v == True:
                 if x + y == 16:  # final cell
                     self.counter = -1
-                    logging.warning(" solve: success")
+                    logging.warning(solved)
                     return "Success"
                 else:
                     result = self.solve_backtrack(
