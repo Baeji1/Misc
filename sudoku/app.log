@@ -1,34 +1,34 @@
- 10-Apr-21 18:43:01 - CRITICAL - start
- 10-Apr-21 18:43:01 - INFO - creating sudoku
- 10-Apr-21 18:43:01 - INFO -  using file: c:/Users/rajatshr/Desktop/Code/Misc/sudoku/sudoku_input.txt
- 10-Apr-21 18:43:01 - INFO - creating sudoku
- 10-Apr-21 18:43:01 - INFO -  using file: c:/Users/rajatshr/Desktop/Code/Misc/sudoku/sudoku_sol.txt
- 10-Apr-21 18:43:01 - INFO - validation: ok
- 10-Apr-21 18:43:01 - INFO - validation: ok
- 10-Apr-21 18:43:01 - INFO - validation: ok
- 10-Apr-21 18:43:01 - INFO - validation: ok
- 10-Apr-21 18:43:01 - INFO - validation: ok
- 10-Apr-21 18:43:01 - INFO - validation: ok
- 10-Apr-21 18:43:01 - INFO - validation: ok
- 10-Apr-21 18:43:01 - INFO - validation: ok
- 10-Apr-21 18:43:01 - INFO - validation: ok
- 10-Apr-21 18:43:01 - INFO - validation: ok
- 10-Apr-21 18:43:01 - INFO - validation: ok
- 10-Apr-21 18:43:01 - INFO - validation: ok
- 10-Apr-21 18:43:01 - INFO - validation: ok
- 10-Apr-21 18:43:01 - INFO - validation: ok
- 10-Apr-21 18:43:01 - INFO - validation: ok
- 10-Apr-21 18:43:01 - INFO - validation: ok
- 10-Apr-21 18:43:01 - INFO - validation: ok
- 10-Apr-21 18:43:01 - INFO - validation: ok
- 10-Apr-21 18:43:01 - INFO - No numbers available at position 6,5
- 10-Apr-21 18:43:01 - INFO - validation: ok
- 10-Apr-21 18:43:01 - INFO - validation: ok
- 10-Apr-21 18:43:01 - INFO - validation: ok
- 10-Apr-21 18:43:01 - INFO - validation: ok
- 10-Apr-21 18:43:01 - INFO - validation: ok
- 10-Apr-21 18:43:01 - INFO - validation: ok
- 10-Apr-21 18:43:01 - INFO - creating sudoku
- 10-Apr-21 18:43:01 - WARNING - No source file provided to init
- 10-Apr-21 18:43:01 - INFO -  objects are equal
- 10-Apr-21 18:43:01 - CRITICAL - end
+ 10-Apr-21 18:48:56 - CRITICAL - start
+ 10-Apr-21 18:48:56 - INFO - creating sudoku
+ 10-Apr-21 18:48:56 - INFO -  using file: c:/Users/rajatshr/Desktop/Code/Misc/sudoku/sudoku_input.txt
+ 10-Apr-21 18:48:56 - INFO - creating sudoku
+ 10-Apr-21 18:48:56 - INFO -  using file: c:/Users/rajatshr/Desktop/Code/Misc/sudoku/sudoku_sol.txt
+ 10-Apr-21 18:48:56 - INFO - validation: ok
+ 10-Apr-21 18:48:56 - INFO - validation: ok
+ 10-Apr-21 18:48:56 - INFO - validation: ok
+ 10-Apr-21 18:48:56 - INFO - validation: ok
+ 10-Apr-21 18:48:56 - INFO - validation: ok
+ 10-Apr-21 18:48:56 - INFO - validation: ok
+ 10-Apr-21 18:48:56 - INFO - validation: ok
+ 10-Apr-21 18:48:56 - INFO - validation: ok
+ 10-Apr-21 18:48:56 - INFO - validation: ok
+ 10-Apr-21 18:48:56 - INFO - validation: ok
+ 10-Apr-21 18:48:56 - INFO - validation: ok
+ 10-Apr-21 18:48:56 - INFO - validation: ok
+ 10-Apr-21 18:48:56 - INFO - validation: ok
+ 10-Apr-21 18:48:56 - INFO - validation: ok
+ 10-Apr-21 18:48:56 - INFO - validation: ok
+ 10-Apr-21 18:48:56 - INFO - validation: ok
+ 10-Apr-21 18:48:56 - INFO - validation: ok
+ 10-Apr-21 18:48:56 - INFO - validation: ok
+ 10-Apr-21 18:48:56 - INFO - No numbers available at position 6,5
+ 10-Apr-21 18:48:56 - INFO - validation: ok
+ 10-Apr-21 18:48:56 - INFO - validation: ok
+ 10-Apr-21 18:48:56 - INFO - validation: ok
+ 10-Apr-21 18:48:56 - INFO - validation: ok
+ 10-Apr-21 18:48:56 - INFO - validation: ok
+ 10-Apr-21 18:48:56 - INFO - validation: ok
+ 10-Apr-21 18:48:56 - INFO - creating sudoku
+ 10-Apr-21 18:48:56 - WARNING - No source file provided to init
+ 10-Apr-21 18:48:56 - ERROR -  objects of unequal dimensions: 9 : 4
+ 10-Apr-21 18:48:56 - CRITICAL - end

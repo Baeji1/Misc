@@ -223,7 +223,7 @@ class Sudoku:
         # prints grid in conventional form
         # full = 0 for minimal and full = 1 (default) for complete grid
         print("\n Grid:\n")
-        print("-------------------------")
+        print("-------------" * (self.rank - 1))
         for r in range(self.n):
             print("|", end=" ")
             for c in range(self.n):
@@ -231,11 +231,11 @@ class Sudoku:
                     print(self.grid[r][c], end=" ")
                 else:
                     print(" ", end=" ")
-                if (c + 1) % 3 == 0:
+                if (c + 1) % self.rank == 0:
                     print("|", end=" ")
             print()
-            if (r + 1) % 3 == 0:
-                print("-------------------------")
+            if (r + 1) % self.rank == 0:
+                print("-------------" * (self.rank - 1))
 
 
 def numberToBase(n, b):
@@ -261,10 +261,14 @@ if __name__ == "__main__":
     logging.critical("start")
 
     a = Sudoku(sourcefile="c:/Users/rajatshr/Desktop/Code/Misc/sudoku/sudoku_input.txt")
-    b = Sudoku(sourcefile="c:/Users/rajatshr/Desktop/Code/Misc/sudoku/sudoku_sol.txt")
+    b = Sudoku(
+        rank=2, sourcefile="c:/Users/rajatshr/Desktop/Code/Misc/sudoku/sudoku_sol.txt"
+    )
     a.solve_backtrack()
     print(a)
+    print(b)
+    print(a.n, b.n)
     print(Sudoku.compare(a, b))
 
-    logging.critical('end')
+    logging.critical("end")
 
