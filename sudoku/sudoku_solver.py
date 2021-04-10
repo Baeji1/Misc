@@ -85,25 +85,57 @@ class Sudoku:
         values = get_position_available_set() # this has all the possible values for x,y
         # values should update with the grid
 
-        if values = non zero:
-            for val in values
-                put val in x,y
+        if values > 0:
+            for loop in values:
+                put value in x,y
                 v = validate
                 if v = true:
-                    if x,y = last:
-                        success
+                    if last:
+                        return success
                     else:
-                        solve backtrack(next)
-            
-        else:
-            v = validate
-            if v = true:
-                if x,y = last:
-                    success
+                        x,y success
+                        g = go ahead
+                        if g = success:
+                            return success
                 else:
-                    solve backtrack(next)           
+                    failure retry loop
+            confirm all loop values failed
+            put 0 in x,y
+            return failure
+        else:
+            if last:
+                return success
+            else:
+                g = go next
+                return g
         
         """
+
+        values = self.get_position_available_set(x, y)
+        next_x = (x + 1) % 9
+        next_y = (y + 1) % 9
+
+        if len(values) > 0:
+            for val in values:
+                self.grid[x][y] = val
+                v = self.validate()
+                if v == True:
+                    if x == 8 and y == 8:
+                        return "Success"
+                    else:
+                        result = self.solve_backtrack(next_x, next_y)
+                        if result == "Success":
+                            return result
+                else:
+                    continue
+            self.grid[x][y] = 0
+            return "Failure"
+        else:
+            if x == 8 and y == 8:
+                return "Success"
+            else:
+                result = self.solve_backtrack(next_x, next_y)
+                return result
 
     def get_position_available_set(self, x, y):
         # sync to latest value
