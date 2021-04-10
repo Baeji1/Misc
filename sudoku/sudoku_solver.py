@@ -8,7 +8,7 @@ import progressbar
 class Sudoku:
     def __init__(self, rank=3, sourcefile=False):
         # initial call to create sudoku object
-        logging.info("creating sudoku")
+        logging.warning("creating sudoku")
         self.rank = rank
         self.filename = sourcefile
         self.n = self.rank ** 2
@@ -27,7 +27,7 @@ class Sudoku:
 
         # source for grid values
         if self.filename:
-            logging.info(f" using file: {self.filename}")
+            logging.warning(f" using file: {self.filename}")
             self.grid = self._input()
         else:
             logging.warning("No source file provided to init")
@@ -149,7 +149,6 @@ class Sudoku:
         values = self.get_position_available_set(x, y)
 
         if int(str(x) + str(y)) > self.counter:
-            # print(int(str(x) + str(y)))
             self.bar.update(int(str(x) + str(y)))
             self.counter = int(str(x) + str(y))
 
@@ -167,6 +166,7 @@ class Sudoku:
                 if v == True:
                     if x == 8 and y == 8:
                         self.counter = -1
+                        logging.warning(" solve: success")
                         return "Success"
                     else:
                         result = self.solve_backtrack(next_x, next_y)
@@ -179,6 +179,7 @@ class Sudoku:
         else:
             if x == 8 and y == 8:
                 self.counter = -1
+                logging.warning(" solve: success")
                 return "Success"
             else:
                 result = self.solve_backtrack(next_x, next_y)
@@ -279,13 +280,13 @@ if __name__ == "__main__":
         filemode="w",
         format=" %(asctime)s - %(levelname)s - %(message)s",
         datefmt="%d-%b-%y %H:%M:%S",
-        level=logging.INFO,
+        level=logging.WARNING,
     )
     logging.critical("start")
 
     path = os.path.join(os.getcwd(), "sudoku/puzzles/")
 
-    f = "extreme"
+    f = "custom"
     sourcefile = os.path.join(path, f + ".txt")
     sourcefile_sol = os.path.join(path, f + "_sol.txt")
 
@@ -295,7 +296,7 @@ if __name__ == "__main__":
     start = time.time()
     a.solve_backtrack()
     end = time.time()
-    time.sleep(0.1)
+    a.to_file(sourcefile_sol)
     a.pretty(raw=1)
     print(a)
     if Sudoku.compare(a, b):
