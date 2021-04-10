@@ -1,4 +1,5 @@
 import numpy as np
+import os
 import logging
 
 
@@ -107,7 +108,7 @@ class Sudoku:
             if sum(b) != sum(set(b)):
                 logging.info(f"Block duplicate: {i}")
                 return False
-        logging.info("validation: ok")
+        logging.debug("validation: ok")
         return True
 
     def solve_backtrack(self, x=0, y=0):
@@ -270,13 +271,17 @@ if __name__ == "__main__":
     )
     logging.critical("start")
 
-    a = Sudoku(sourcefile="c:/Users/rajatshr/Desktop/Code/Misc/sudoku/sudoku_input.txt")
-    b = Sudoku(sourcefile="c:/Users/rajatshr/Desktop/Code/Misc/sudoku/sudoku_sol.txt")
-    a.solve_backtrack()
-    print(a)
-    print(b)
-    print(Sudoku.compare(a, b))
-    a.pretty(raw=1)
+    path = "c:/Users/rajatshr/Desktop/Code/Misc/sudoku/puzzles/"
 
+    f = "beginner"
+    sourcefile = os.path.join(path, f + ".txt")
+    sourcefile_sol = os.path.join(path, f + "_sol.txt")
+
+    a = Sudoku(sourcefile=sourcefile)
+    b = Sudoku(sourcefile=sourcefile_sol)
+    a.solve_backtrack()
+    a.pretty(raw=1)
+    print(a)
+    print(Sudoku.compare(a, b))
     logging.critical("end")
 
