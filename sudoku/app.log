@@ -1,11 +1,42 @@
- 10-Apr-21 20:28:30 - CRITICAL - start
- 10-Apr-21 20:28:30 - INFO - creating sudoku
- 10-Apr-21 20:28:30 - INFO -  using file: c:/Users/rajatshr/Desktop/Code/Misc/sudoku/puzzles/easy.txt
- 10-Apr-21 20:28:30 - INFO - creating sudoku
- 10-Apr-21 20:28:30 - INFO -  using file: c:/Users/rajatshr/Desktop/Code/Misc/sudoku/puzzles/easy_sol.txt
- 10-Apr-21 20:28:30 - INFO - No numbers available at position 4,4
- 10-Apr-21 20:28:30 - INFO - No numbers available at position 6,8
- 10-Apr-21 20:28:30 - INFO - creating sudoku
- 10-Apr-21 20:28:30 - WARNING - No source file provided to init
- 10-Apr-21 20:28:30 - INFO -  objects are equal
- 10-Apr-21 20:28:30 - CRITICAL - end
+ 10-Apr-21 20:46:24 - CRITICAL - start
+ 10-Apr-21 20:46:24 - INFO - creating sudoku
+ 10-Apr-21 20:46:24 - INFO -  using file: c:/Users/rajatshr/Desktop/Code/Misc/sudoku/puzzles/medium.txt
+ 10-Apr-21 20:46:24 - INFO - creating sudoku
+ 10-Apr-21 20:46:24 - INFO -  using file: c:/Users/rajatshr/Desktop/Code/Misc/sudoku/puzzles/medium_sol.txt
+ 10-Apr-21 20:46:24 - INFO - No numbers available at position 0,3
+ 10-Apr-21 20:46:24 - INFO - No numbers available at position 0,6
+ 10-Apr-21 20:46:24 - INFO - No numbers available at position 1,6
+ 10-Apr-21 20:46:24 - INFO - No numbers available at position 4,5
+ 10-Apr-21 20:46:24 - INFO - No numbers available at position 8,6
+ 10-Apr-21 20:46:24 - INFO - No numbers available at position 6,7
+ 10-Apr-21 20:46:24 - INFO - No numbers available at position 6,4
+ 10-Apr-21 20:46:24 - INFO - No numbers available at position 7,7
+ 10-Apr-21 20:46:25 - INFO - No numbers available at position 7,8
+ 10-Apr-21 20:46:25 - INFO - No numbers available at position 7,7
+ 10-Apr-21 20:46:25 - INFO - No numbers available at position 8,1
+ 10-Apr-21 20:46:25 - INFO - No numbers available at position 6,7
+ 10-Apr-21 20:46:25 - INFO - No numbers available at position 6,4
+ 10-Apr-21 20:46:25 - INFO - No numbers available at position 6,8
+ 10-Apr-21 20:46:25 - INFO - No numbers available at position 4,5
+ 10-Apr-21 20:46:25 - INFO - No numbers available at position 8,6
+ 10-Apr-21 20:46:25 - INFO - No numbers available at position 1,6
+ 10-Apr-21 20:46:25 - INFO - No numbers available at position 4,5
+ 10-Apr-21 20:46:25 - INFO - No numbers available at position 3,8
+ 10-Apr-21 20:46:25 - INFO - No numbers available at position 4,5
+ 10-Apr-21 20:46:25 - INFO - No numbers available at position 3,5
+ 10-Apr-21 20:46:25 - INFO - No numbers available at position 1,6
+ 10-Apr-21 20:46:25 - INFO - No numbers available at position 4,5
+ 10-Apr-21 20:46:25 - INFO - No numbers available at position 4,5
+ 10-Apr-21 20:46:25 - INFO - No numbers available at position 8,6
+ 10-Apr-21 20:46:25 - INFO - No numbers available at position 4,5
+ 10-Apr-21 20:46:25 - INFO - No numbers available at position 5,1
+ 10-Apr-21 20:46:25 - INFO - No numbers available at position 6,7
+ 10-Apr-21 20:46:25 - INFO - No numbers available at position 6,4
+ 10-Apr-21 20:46:25 - INFO - No numbers available at position 6,8
+ 10-Apr-21 20:46:25 - INFO - No numbers available at position 7,5
+ 10-Apr-21 20:46:25 - INFO - No numbers available at position 7,7
+ 10-Apr-21 20:46:25 - INFO - No numbers available at position 7,5
+ 10-Apr-21 20:46:25 - INFO - creating sudoku
+ 10-Apr-21 20:46:25 - WARNING - No source file provided to init
+ 10-Apr-21 20:46:25 - INFO -  objects are equal
+ 10-Apr-21 20:46:25 - CRITICAL - end
