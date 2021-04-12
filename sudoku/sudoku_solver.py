@@ -39,6 +39,9 @@ class Sudoku:
         # have raw grid for reference
         self.raw_grid = self.grid.copy()
 
+        # markup for crooks method
+        self.markup = [[0 for x in self.n] for y in self.n]
+
     def __repr__(self):
         self.pretty(0)
         return "\n"
@@ -204,6 +207,15 @@ class Sudoku:
                         return result
         self.grid[x][y] = 0  # reset to empty if all values failed
         return "Failure"
+
+    def sync_markup(self):
+        # get all possible value sets for every position in the grid
+
+        for i in range(self.n):
+            for j in range(self.n):
+                self.markup[i][j] = self.get_position_available_set(i, j)
+
+        logging.info(" sync markup")
 
     def get_position_available_set(self, x, y):
         # sync to latest value
