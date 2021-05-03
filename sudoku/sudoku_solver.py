@@ -40,7 +40,7 @@ class Sudoku:
         self.raw_grid = self.grid.copy()
 
         # markup for crooks method
-        self.markup = [[0 for x in self.n] for y in self.n]
+        self.markup = [[0 for _ in range(self.n)] for _ in range(self.n)]
 
     def __repr__(self):
         self.pretty(0)
@@ -188,7 +188,7 @@ class Sudoku:
             else:
                 result = self.solve_backtrack(
                     next_x, next_y
-                )  # call solve on next coord
+                )  # call solve on next coord since this is filled
                 return result
 
         for val in values:  # if empty cell then go through possibilities

@@ -1,44 +1,44 @@
- 11-Apr-21 02:40:29 - CRITICAL - start
- 11-Apr-21 02:40:29 - WARNING - creating sudoku
- 11-Apr-21 02:40:30 - WARNING -  using file: C:\Users\rajatshr\Desktop\Code\Misc\sudoku/puzzles/beginner.txt
- 11-Apr-21 02:40:30 - WARNING - creating sudoku
- 11-Apr-21 02:40:30 - WARNING -  using file: C:\Users\rajatshr\Desktop\Code\Misc\sudoku/puzzles/beginner_sol.txt
- 11-Apr-21 02:40:30 - WARNING -  success: solved
- 11-Apr-21 02:40:30 - WARNING - creating sudoku
- 11-Apr-21 02:40:30 - WARNING - No source file provided to init
- 11-Apr-21 02:40:30 - WARNING - creating sudoku
- 11-Apr-21 02:40:30 - WARNING -  using file: C:\Users\rajatshr\Desktop\Code\Misc\sudoku/puzzles/easy.txt
- 11-Apr-21 02:40:30 - WARNING - creating sudoku
- 11-Apr-21 02:40:30 - WARNING -  using file: C:\Users\rajatshr\Desktop\Code\Misc\sudoku/puzzles/easy_sol.txt
- 11-Apr-21 02:40:30 - WARNING -  success: solved
- 11-Apr-21 02:40:30 - WARNING - creating sudoku
- 11-Apr-21 02:40:30 - WARNING - No source file provided to init
- 11-Apr-21 02:40:30 - WARNING - creating sudoku
- 11-Apr-21 02:40:30 - WARNING -  using file: C:\Users\rajatshr\Desktop\Code\Misc\sudoku/puzzles/medium.txt
- 11-Apr-21 02:40:30 - WARNING - creating sudoku
- 11-Apr-21 02:40:30 - WARNING -  using file: C:\Users\rajatshr\Desktop\Code\Misc\sudoku/puzzles/medium_sol.txt
- 11-Apr-21 02:40:30 - WARNING -  success: solved
- 11-Apr-21 02:40:30 - WARNING - creating sudoku
- 11-Apr-21 02:40:30 - WARNING - No source file provided to init
- 11-Apr-21 02:40:30 - WARNING - creating sudoku
- 11-Apr-21 02:40:30 - WARNING -  using file: C:\Users\rajatshr\Desktop\Code\Misc\sudoku/puzzles/hard.txt
- 11-Apr-21 02:40:30 - WARNING - creating sudoku
- 11-Apr-21 02:40:30 - WARNING -  using file: C:\Users\rajatshr\Desktop\Code\Misc\sudoku/puzzles/hard_sol.txt
- 11-Apr-21 02:40:31 - WARNING -  success: solved
- 11-Apr-21 02:40:31 - WARNING - creating sudoku
- 11-Apr-21 02:40:31 - WARNING - No source file provided to init
- 11-Apr-21 02:40:31 - WARNING - creating sudoku
- 11-Apr-21 02:40:31 - WARNING -  using file: C:\Users\rajatshr\Desktop\Code\Misc\sudoku/puzzles/extreme.txt
- 11-Apr-21 02:40:31 - WARNING - creating sudoku
- 11-Apr-21 02:40:31 - WARNING -  using file: C:\Users\rajatshr\Desktop\Code\Misc\sudoku/puzzles/extreme_sol.txt
- 11-Apr-21 02:40:36 - WARNING -  success: solved
- 11-Apr-21 02:40:36 - WARNING - creating sudoku
- 11-Apr-21 02:40:36 - WARNING - No source file provided to init
- 11-Apr-21 02:40:36 - WARNING - creating sudoku
- 11-Apr-21 02:40:36 - WARNING -  using file: C:\Users\rajatshr\Desktop\Code\Misc\sudoku/puzzles/custom.txt
- 11-Apr-21 02:40:36 - WARNING - creating sudoku
- 11-Apr-21 02:40:36 - WARNING -  using file: C:\Users\rajatshr\Desktop\Code\Misc\sudoku/puzzles/custom_sol.txt
- 11-Apr-21 02:40:57 - WARNING -  success: solved
- 11-Apr-21 02:40:57 - WARNING - creating sudoku
- 11-Apr-21 02:40:57 - WARNING - No source file provided to init
- 11-Apr-21 02:40:57 - CRITICAL - end
+ 14-Apr-21 22:56:40 - CRITICAL - start
+ 14-Apr-21 22:56:40 - WARNING - creating sudoku
+ 14-Apr-21 22:56:41 - WARNING -  using file: C:\Users\rajatshr\Desktop\Code\Misc\sudoku/puzzles/beginner.txt
+ 14-Apr-21 22:56:41 - WARNING - creating sudoku
+ 14-Apr-21 22:56:41 - WARNING -  using file: C:\Users\rajatshr\Desktop\Code\Misc\sudoku/puzzles/beginner_sol.txt
+ 14-Apr-21 22:56:41 - WARNING -  success: solved
+ 14-Apr-21 22:56:41 - WARNING - creating sudoku
+ 14-Apr-21 22:56:41 - WARNING - No source file provided to init
+ 14-Apr-21 22:56:41 - WARNING - creating sudoku
+ 14-Apr-21 22:56:41 - WARNING -  using file: C:\Users\rajatshr\Desktop\Code\Misc\sudoku/puzzles/easy.txt
+ 14-Apr-21 22:56:41 - WARNING - creating sudoku
+ 14-Apr-21 22:56:41 - WARNING -  using file: C:\Users\rajatshr\Desktop\Code\Misc\sudoku/puzzles/easy_sol.txt
+ 14-Apr-21 22:56:41 - WARNING -  success: solved
+ 14-Apr-21 22:56:41 - WARNING - creating sudoku
+ 14-Apr-21 22:56:41 - WARNING - No source file provided to init
+ 14-Apr-21 22:56:41 - WARNING - creating sudoku
+ 14-Apr-21 22:56:41 - WARNING -  using file: C:\Users\rajatshr\Desktop\Code\Misc\sudoku/puzzles/medium.txt
+ 14-Apr-21 22:56:41 - WARNING - creating sudoku
+ 14-Apr-21 22:56:41 - WARNING -  using file: C:\Users\rajatshr\Desktop\Code\Misc\sudoku/puzzles/medium_sol.txt
+ 14-Apr-21 22:56:42 - WARNING -  success: solved
+ 14-Apr-21 22:56:42 - WARNING - creating sudoku
+ 14-Apr-21 22:56:42 - WARNING - No source file provided to init
+ 14-Apr-21 22:56:42 - WARNING - creating sudoku
+ 14-Apr-21 22:56:42 - WARNING -  using file: C:\Users\rajatshr\Desktop\Code\Misc\sudoku/puzzles/hard.txt
+ 14-Apr-21 22:56:42 - WARNING - creating sudoku
+ 14-Apr-21 22:56:42 - WARNING -  using file: C:\Users\rajatshr\Desktop\Code\Misc\sudoku/puzzles/hard_sol.txt
+ 14-Apr-21 22:56:43 - WARNING -  success: solved
+ 14-Apr-21 22:56:43 - WARNING - creating sudoku
+ 14-Apr-21 22:56:43 - WARNING - No source file provided to init
+ 14-Apr-21 22:56:43 - WARNING - creating sudoku
+ 14-Apr-21 22:56:43 - WARNING -  using file: C:\Users\rajatshr\Desktop\Code\Misc\sudoku/puzzles/extreme.txt
+ 14-Apr-21 22:56:43 - WARNING - creating sudoku
+ 14-Apr-21 22:56:43 - WARNING -  using file: C:\Users\rajatshr\Desktop\Code\Misc\sudoku/puzzles/extreme_sol.txt
+ 14-Apr-21 22:56:48 - WARNING -  success: solved
+ 14-Apr-21 22:56:48 - WARNING - creating sudoku
+ 14-Apr-21 22:56:48 - WARNING - No source file provided to init
+ 14-Apr-21 22:56:48 - WARNING - creating sudoku
+ 14-Apr-21 22:56:48 - WARNING -  using file: C:\Users\rajatshr\Desktop\Code\Misc\sudoku/puzzles/custom.txt
+ 14-Apr-21 22:56:48 - WARNING - creating sudoku
+ 14-Apr-21 22:56:48 - WARNING -  using file: C:\Users\rajatshr\Desktop\Code\Misc\sudoku/puzzles/custom_sol.txt
+ 14-Apr-21 22:57:32 - WARNING -  success: solved
+ 14-Apr-21 22:57:32 - WARNING - creating sudoku
+ 14-Apr-21 22:57:32 - WARNING - No source file provided to init
+ 14-Apr-21 22:57:32 - CRITICAL - end
