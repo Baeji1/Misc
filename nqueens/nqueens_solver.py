@@ -2,6 +2,22 @@ import os
 import logging
 
 
+def markdiag(x: List[List[str]], c: int, j: int):
+    n = len(x[0])
+    return n
+
+
+def checkdiag(n: int):
+    x = [["." for i in range(n)] for j in range(n)]
+
+    c = n // 2
+
+    for j in range(n):
+        markdiag(x, c, j)
+
+    print(x)
+
+
 def main():
     path = os.getcwd()
 
